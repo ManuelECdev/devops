@@ -1,4 +1,4 @@
 ## Project summary
 
-This the final udacity projects
+This is the final udacity projects
 
