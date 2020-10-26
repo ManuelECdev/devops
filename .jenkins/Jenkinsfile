@@ -5,8 +5,6 @@ pipeline {
         stage('Build') {
             steps {
 		sh """
-                    python3 -m venv ~/.udacityfinalapp
-                    source ~/.udacityfinalapp/bin/activate
 		    make install
 		    make lint
                 """

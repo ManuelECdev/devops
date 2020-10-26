@@ -7,8 +7,8 @@
 
 setup:
 	# Create python virtualenv & source it
-	python3 -m venv ~/.udacityfinalapp
-	# source ~/.udacityfinalapp/bin/activate
+	python3 -m venv ~/udacityfinalapp
+	# source ~/udacityfinalapp/bin/activate
 
 install:
 	# This should be run from inside a virtualenv
