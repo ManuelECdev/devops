@@ -23,7 +23,7 @@ test:
 hadolint:
         # See local hadolint install instructions:   https://github.com/hadolint/hadolint
         # This is linter for Dockerfiles
-        hadolint Dockerfile
+	hadolint Dockerfile
 
 lint:
 	# This is a linter for Python source code linter: https://www.pylint.org/
