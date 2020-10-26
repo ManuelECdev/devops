@@ -5,6 +5,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+		python3 -m venv ~/.udacityfinalapp
+                source ~/.udacityfinalapp/bin/activate
+		make install
+		make lint
                 echo "env ${env.BUILD_ID} on ${env.JENKINS_URL}"
 		echo "env ${env.BUILD_NUMBER} on ${env.JOB_NAME}"
 		echo "env ${env.EXECUTOR_NUMBER} on ${env.BUILD_TAG}"
