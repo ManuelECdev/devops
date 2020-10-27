@@ -15,9 +15,10 @@ pipeline {
                     echo "docker image ls"
                     docker image ls
                     echo "Docker ID and Image: manuelecdev/udafinalproject-${env.BUILD_TAG}"
-                    cat /password | docker login --username manuelecdev --password-stdin && docker image tag udafinalproject-${env.BUILD_TAG} "manuelecdev/udafinalproject-${env.BUILD_TAG}
+                    cat /password | docker login --username manuelecdev --password-stdin
+                    docker image tag udafinalproject-${env.BUILD_TAG} manuelecdev/udafinalproject-${env.BUILD_TAG}
                     echo "docker image push"
-                    docker image push "manuelecdev/udafinalproject-${env.BUILD_TAG}
+                    docker image push manuelecdev/udafinalproject-${env.BUILD_TAG}
                 """
                 echo "env ${env.BUILD_ID} on ${env.JENKINS_URL}"
 		echo "env ${env.BUILD_NUMBER} on ${env.JOB_NAME}"
