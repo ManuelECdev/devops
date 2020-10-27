@@ -15,7 +15,7 @@ pipeline {
                     echo "docker image ls"
                     docker image ls
                     echo "Docker ID and Image: manuelecdev/udafinalproject-${env.BUILD_TAG}"
-                    cat ~/my_password.txt | docker login --username manuelecdev --password-stdin && docker image tag udafinalproject-${env.BUILD_TAG} "manuelecdev/udafinalproject-${env.BUILD_TAG}
+                    cat /password | docker login --username manuelecdev --password-stdin && docker image tag udafinalproject-${env.BUILD_TAG} "manuelecdev/udafinalproject-${env.BUILD_TAG}
                     echo "docker image push"
                     docker image push "manuelecdev/udafinalproject-${env.BUILD_TAG}
                 """
