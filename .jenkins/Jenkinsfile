@@ -11,9 +11,14 @@ pipeline {
 		    make lint
                     make hadolint
                     echo "building with docker"
-                    docker build --tag=udafinalproject${env.BUILD_TAG} .
+                    docker build --tag=udafinalproject-${env.BUILD_TAG} .
                     echo "docker image ls"
                     docker image ls
+                    dockerpath="manuelecdev/udafinalproject-${env.BUILD_TAG}"
+                    echo "Docker ID and Image: $dockerpath"
+                    docker login && docker image tag udafinalproject-${env.BUILD_TAG} $dockerpath
+                    echo "docker image push"
+                    docker image push $dockerpath 
                 """
                 echo "env ${env.BUILD_ID} on ${env.JENKINS_URL}"
 		echo "env ${env.BUILD_NUMBER} on ${env.JOB_NAME}"
