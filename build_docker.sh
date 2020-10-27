@@ -4,8 +4,8 @@
 
 # Step 1:
 # Build image and add a descriptive tag
-sudo -S docker build --tag=udafinalproject .
+docker build --tag=udafinalproject .
 
 # Step 2: 
 # List docker images
-sudo -S docker image ls
+docker image ls
