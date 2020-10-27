@@ -5,10 +5,11 @@ pipeline {
         stage('Build') {
             steps {
 		sh """
-                    export PATH="/var/lib/jenkins/.local/bin:$PATH"
+                    export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/var/lib/jenkins/.local/bin:$PATH"
                     echo ${PATH}
 		    make install
 		    make lint
+                    make hadolint
                 """
                 echo "env ${env.BUILD_ID} on ${env.JENKINS_URL}"
 		echo "env ${env.BUILD_NUMBER} on ${env.JOB_NAME}"
