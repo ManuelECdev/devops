@@ -1,0 +1,7 @@
+---
+- name: deploy kube cluster
+  hosts: all
+  user: manuel
+
+  roles:
+   - deploy-cluster

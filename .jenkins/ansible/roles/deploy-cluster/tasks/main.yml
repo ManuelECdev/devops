@@ -1,0 +1,4 @@
+---
+- name: "deploy minikube cluster"
+  shell: |
+    minikube start

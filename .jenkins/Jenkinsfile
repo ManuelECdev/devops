@@ -26,5 +26,15 @@ pipeline {
 		echo "env ${env.WORKSPACE} on ${env.NODE_NAME}"
             }
         }
+
+        stage('Deploy') {
+            steps {
+                sh """
+                    export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/var/lib/jenkins/.local/bin:$PATH"
+                    echo ${PATH}
+                    echo "deploy kube cluster"
+                    ansible-playbook ./.jenkins/ansible/main.yml -i /etc/ansible/inventory
+            }
+        }
     }
 }
