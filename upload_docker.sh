@@ -11,10 +11,11 @@ dockerpath="manuelecdev/udafinalproject-${env.BUILD_TAG}"
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
-docker login && sudo docker image tag udafinalproject $dockerpath
+docker login && docker image tag udafinalproject $dockerpath
 
 # Step 3:
 # Push image to a docker repository
+echo "docker image push"
 docker image push $dockerpath 
 
 
