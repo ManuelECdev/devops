@@ -10,6 +10,7 @@ pipeline {
 		    make install
 		    make lint
                     make hadolint
+                    ./build_docker.sh
                 """
                 echo "env ${env.BUILD_ID} on ${env.JENKINS_URL}"
 		echo "env ${env.BUILD_NUMBER} on ${env.JOB_NAME}"
