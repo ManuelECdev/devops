@@ -14,7 +14,7 @@ pipeline {
                     docker build --tag=udafinalproject-${env.BUILD_TAG} .
                     echo "docker image ls"
                     docker image ls
-                    dockerpath="manuelecdev/udafinalproject-${env.BUILD_TAG}"
+                    export dockerpath="manuelecdev/udafinalproject-${env.BUILD_TAG}"
                     echo "Docker ID and Image: $dockerpath"
                     docker login && docker image tag udafinalproject-${env.BUILD_TAG} $dockerpath
                     echo "docker image push"
