@@ -14,11 +14,10 @@ pipeline {
                     docker build --tag=udafinalproject-${env.BUILD_TAG} .
                     echo "docker image ls"
                     docker image ls
-                    export dockerpath="manuelecdev/udafinalproject-${env.BUILD_TAG}"
-                    echo "Docker ID and Image: $dockerpath"
-                    docker login && docker image tag udafinalproject-${env.BUILD_TAG} $dockerpath
+                    echo "Docker ID and Image: manuelecdev/udafinalproject-${env.BUILD_TAG}"
+                    docker login && docker image tag udafinalproject-${env.BUILD_TAG} "manuelecdev/udafinalproject-${env.BUILD_TAG}
                     echo "docker image push"
-                    docker image push $dockerpath 
+                    docker image push "manuelecdev/udafinalproject-${env.BUILD_TAG}
                 """
                 echo "env ${env.BUILD_ID} on ${env.JENKINS_URL}"
 		echo "env ${env.BUILD_NUMBER} on ${env.JOB_NAME}"
