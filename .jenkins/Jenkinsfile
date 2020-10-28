@@ -34,6 +34,7 @@ pipeline {
                     echo ${PATH}
                     echo "deploy kube cluster"
                     ansible-playbook ./.jenkins/ansible/main.yml -i /etc/ansible/inventory
+                    ansible-playbook ./.jenkins/ansible/main-deploy-app.yml -i /etc/ansible/inventory
                 """
             }
         }

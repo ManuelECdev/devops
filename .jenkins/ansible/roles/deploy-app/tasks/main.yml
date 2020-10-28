@@ -1,0 +1,10 @@
+---
+- name: "deploy minikube cluster"
+  shell: |
+    kubectl get pods --all-namespaces | grep udafinalproject | awk '{print $2}'
+  register: oldPod
+  ignore_errors: true
+
+- debug:
+    var: oldPod
+    verbosity: 0
