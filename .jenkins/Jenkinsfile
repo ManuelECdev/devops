@@ -11,7 +11,7 @@ pipeline {
 		    make lint
                     make hadolint
                     echo "building with docker"
-                    docker build --tag=udafinalproject-${env.BUILD_TAG} .
+                    docker build --tag=manuelecdev/udafinalproject-${env.BUILD_TAG} .
                     echo "docker image ls"
                     docker image ls
                     echo "Docker ID and Image: manuelecdev/udafinalproject-${env.BUILD_TAG}"
