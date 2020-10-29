@@ -11,13 +11,13 @@ pipeline {
 		    make lint
                     make hadolint
                     echo "building with docker"
-                    #docker build --tag=manuelecdev/udafinalproject-${env.BUILD_TAG} .
-                    #echo "docker image ls"
-                    #docker image ls
-                    #echo "Docker ID and Image: manuelecdev/udafinalproject-${env.BUILD_TAG}"
-                    #cat /password | docker login --username manuelecdev --password-stdin
-                    #echo "docker image push"
-                    #docker image push manuelecdev/udafinalproject-${env.BUILD_TAG}
+                    docker build --tag=manuelecdev/udafinalproject-${env.BUILD_TAG} .
+                    echo "docker image ls"
+                    docker image ls
+                    echo "Docker ID and Image: manuelecdev/udafinalproject-${env.BUILD_TAG}"
+                    cat /password | docker login --username manuelecdev --password-stdin
+                    echo "docker image push"
+                    docker image push manuelecdev/udafinalproject-${env.BUILD_TAG}
                 """
                 echo "env ${env.BUILD_ID} on ${env.JENKINS_URL}"
 		echo "env ${env.BUILD_NUMBER} on ${env.JOB_NAME}"
