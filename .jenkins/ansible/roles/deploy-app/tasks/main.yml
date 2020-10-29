@@ -13,11 +13,11 @@
     var: build_tag
     verbosity: 0
 
-#- name: "deploy app"
-#  shell: |
-#    echo "deploy new container build"
-#    kubectl run udafinalproject-{{ build_tag }}  --image=manuelecdev/udafinalproject-{{ build_tag }} --port=5000 --labels app=udafinalproject-{{ build_tag }}
-#  ignore_errors: true
+- name: "deploy app"
+  shell: |
+    echo "deploy new container build"
+    kubectl run udafinalproject-{{ build_tag }}  --image=manuelecdev/udafinalproject-{{ build_tag }} --port=5000 --labels app=udafinalproject-{{ build_tag }}
+  ignore_errors: true
 
 #- name: " make blue/green deployment and clean old environment"
 #  shell: |
