@@ -9,6 +9,10 @@
     var: oldPod
     verbosity: 0
 
+- debug:
+    var: build_tag
+    verbosity: 0
+
 #- name: "deploy app"
 #  shell: |
 #    echo "deploy new container build"
