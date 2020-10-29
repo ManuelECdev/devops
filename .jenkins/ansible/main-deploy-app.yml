@@ -3,6 +3,6 @@
   hosts: all
   user: manuel
   vars: 
-    build_tag: "{{lookup('env', 'env.BUILD_TAG')}}"
+    build_tag: "{{lookup('env', 'BUILD_TAG')}}"
   roles:
    - role: deploy-app
