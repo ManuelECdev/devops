@@ -27,12 +27,10 @@
 
 - name: "update lb service selector to the new app"
   shell: |
-     echo “updating the lb service to the new app deployment”
      kubectl patch service udafinalproject-lb -p '{"spec":{"selector":{"app": "udafinalproject-{{ build_tag }}"}}}'
   when: oldPod.stdout != ""
 
 - name: " delete old deployment"
   shell: |
-     echo "deleting old environment"
-     kubectl delete pod {{ oldPod }}
+     kubectl delete pod {{ oldPod.stdout }}
   when: oldPod.stdout != ""
