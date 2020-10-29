@@ -3,21 +3,11 @@
   shell: |
     kubectl get pods --all-namespaces | grep udafinalproject | awk '{print $2}'
   register: oldPod
-  ignore_errors: true
-
-- debug:
-    var: oldPod
-    verbosity: 0
-
-- debug:
-    var: build_tag
-    verbosity: 0
 
 - name: "deploy app"
   shell: |
     echo "deploy new container build"
     kubectl run udafinalproject-{{ build_tag }}  --image=manuelecdev/udafinalproject-{{ build_tag }} --port=5000 --labels app=udafinalproject-{{ build_tag }}
-  ignore_errors: true
 
 - name: "first app deployment"
   shell: |

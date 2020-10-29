@@ -19,10 +19,6 @@ pipeline {
                     echo "docker image push"
                     docker image push manuelecdev/udafinalproject-${env.BUILD_TAG}
                 """
-                echo "env ${env.BUILD_ID} on ${env.JENKINS_URL}"
-		echo "env ${env.BUILD_NUMBER} on ${env.JOB_NAME}"
-		echo "env ${env.EXECUTOR_NUMBER} on ${env.BUILD_TAG}"
-		echo "env ${env.WORKSPACE} on ${env.NODE_NAME}"
             }
         }
 
