@@ -25,10 +25,10 @@
      kubectl patch service udafinalproject-lb -p '{"spec":{"selector":{"app": "udafinalproject-{{ build_tag }}"}}}'
      echo "deleting old environment"
      kubectl delete pod {{ oldPod }}
-  when oldPod.stdout != ""
+  when: oldPod.stdout != ""
 
-- name: " first app deployment"
+- name: "first app deployment"
   shell: |
      echo "first app deployment"
      kubectl expose po udafinalproject-{{ build_tag }}  --target-port=5000 -l app=udafinalproject --name=udafinalproject-lb  --type=LoadBalancer
-  when oldPod.stdout == ""
+  when: oldPod.stdout == ""
