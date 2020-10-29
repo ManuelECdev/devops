@@ -2,6 +2,7 @@
 - name: deploy kube cluster
   hosts: all
   user: manuel
-  vars: build_tag: "{{ lookup('env', 'BUILD_TAG') }}"
+  vars: 
+    build_tag: test
   roles:
    - role: deploy-app
