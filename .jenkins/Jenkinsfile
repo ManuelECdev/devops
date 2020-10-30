@@ -26,30 +26,8 @@ pipeline {
             steps {
                 sh """
                     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/var/lib/jenkins/.local/bin:$PATH"
-                    echo ${PATH}
-                    #export cluster=$(eksctl get cluster --name udafinalproject --region us-east-1 | grep Error)
-                    #if [[ "$cluster" != "" ]]
-                    #then
-                    #  echo "deploy kube cluster"
-                    #  ansible-playbook ./.jenkins/ansible/main.yml
-                    #fi
                     ansible-playbook ./.jenkins/ansible/main.yml
                     ansible-playbook ./.jenkins/ansible/main-deploy-app.yml
-                    #echo "get oldPod"
-                    #export oldPod=$(kubectl get pods --all-namespaces | grep udafinalproject | awk '{print $2}')
-                    #echo $oldPod
-                    #echo "deploy app"
-                    #kubectl run udafinalproject-${env.BUILD_TAG}  --image=manuelecdev/udafinalproject-${env.BUILD_TAG} --port=5000 --labels app=udafinalproject-${env.BUILD_TAG}
-                    #if [[ "$oldPod" != "" ]]
-                    #then
-                    #  echo "update lb service selector to the new app"
-                    #  kubectl patch service udafinalproject-lb -p '{"spec":{"selector":{"app": "udafinalproject-${env.BUILD_TAG}"}}}'
-                    #  echo "delete old service"
-                    #  kubectl delete pod $oldPod
-                    #else
-                    #  echo "create load balancing service"                      
-                    #  kubectl expose po udafinalproject-${env.BUILD_TAG}  --target-port=5000 -l app=udafinalproject --name=udafinalproject-lb  --type=LoadBalancer
-                    #fi
                 """
             }
         }
