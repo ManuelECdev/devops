@@ -1,6 +1,10 @@
 ---
 - name: "get cluster"
   shell: |
+    echo "test the local task"
+
+- name: "get cluster"
+  shell: |
     eksctl get cluster --name udafinalproject --region us-east-1 | grep Error
   register: cluster
 

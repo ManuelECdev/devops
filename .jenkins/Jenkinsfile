@@ -26,8 +26,8 @@ pipeline {
             steps {
                 sh """
                     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/var/lib/jenkins/.local/bin:$PATH"
-                    ansible-playbook ./.jenkins/ansible/main.yml
-                    ansible-playbook ./.jenkins/ansible/main-deploy-app.yml
+                    ansible-playbook ./.jenkins/ansible/main.yml -i /etc/ansible/hosts
+                    ansible-playbook ./.jenkins/ansible/main-deploy-app.yml -i /etc/ansible/hosts
                 """
             }
         }
