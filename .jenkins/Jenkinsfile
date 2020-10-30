@@ -26,7 +26,7 @@ pipeline {
             steps {
                 sh """
                     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/var/lib/jenkins/.local/bin:$PATH"
-                    echo ${PATH}
+                    echo $PATH
                     export cluster=$(eksctl get cluster --name udafinalproject --region us-east-1 | grep Error)
                     if [[ "$cluster" != "" ]]
                     then
