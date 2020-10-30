@@ -1,6 +1,7 @@
 ---
 - name: deploy kube cluster
   hosts: localhost
+  connection: local
   vars: 
     build_tag: "{{lookup('env', 'BUILD_TAG')}}"
   roles:

@@ -1,5 +1,6 @@
 ---
 - name: deploy kube cluster
   hosts: localhost
+  connection: local
   roles:
    - role: deploy-cluster
