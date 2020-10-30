@@ -1,4 +1,4 @@
 ---
 - name: "deploy minikube cluster"
   shell: |
-    minikube start
+    eksctl create cluster --name udafinalproject --region us-east-1 --zones us-east-1a --nodes-min 1 --nodes-max 1 --ssh-access --ssh-public-key udacity
