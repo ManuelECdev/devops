@@ -1,5 +1,5 @@
 ---
-- name: "get old pod if any"
+- name: "get old pod"
   shell: |
     kubectl get pods --all-namespaces | grep udafinalproject | awk '{print $2}'
   register: oldPod
@@ -9,7 +9,7 @@
     echo "deploy new container build"
     kubectl run udafinalproject-{{ build_tag }}  --image=manuelecdev/udafinalproject-{{ build_tag }} --port=5000 --labels app=udafinalproject-{{ build_tag }}
 
-- name: "first app deployment"
+- name: "deploy loadbalancer service"
   shell: |
      echo "first app deployment"
      kubectl expose po udafinalproject-{{ build_tag }}  --target-port=5000 -l app=udafinalproject --name=udafinalproject-lb  --type=LoadBalancer

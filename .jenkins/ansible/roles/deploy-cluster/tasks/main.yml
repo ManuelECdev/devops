@@ -1,4 +1,10 @@
 ---
-- name: "deploy minikube cluster"
+- name: "get cluster"
+  shell: |
+    eksctl get cluster --name udafinalproject --region us-east-1 | grep Error
+  register: cluster
+
+- name: "deploy eksctl cluster"
   shell: |
     eksctl create cluster --name udafinalproject --region us-east-1 --zones us-east-1a --nodes-min 1 --nodes-max 1 --ssh-access --ssh-public-key udacity
+  when: cluster.stdout != ""
