@@ -19,7 +19,7 @@ pipeline {
                 script {
                     env.cluster = eksctl get cluster --name udafinalproject --region us-east-1 | grep Error
                 }
-                echo ${env.cluster}
+                echo "${env.cluster}"
             }
         }
     }
