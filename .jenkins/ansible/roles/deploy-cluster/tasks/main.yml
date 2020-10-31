@@ -3,6 +3,7 @@
   shell: |
     eksctl get cluster --name udafinalproject --region us-east-1 | grep Error
   register: cluster
+  ignore_errors: True
 
 - name: "deploy eksctl cluster"
   shell: |
