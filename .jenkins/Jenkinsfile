@@ -10,14 +10,6 @@ pipeline {
 		    make install
 		    make lint
                     make hadolint
-                    #echo "building with docker"
-                    #docker build --tag=manuelecdev/udafinalproject-${env.BUILD_TAG} .
-                    #echo "docker image ls"
-                    #docker image ls
-                    #echo "Docker ID and Image: manuelecdev/udafinalproject-${env.BUILD_TAG}"
-                    #cat /password | docker login --username manuelecdev --password-stdin
-                    #echo "docker image push"
-                    #docker image push manuelecdev/udafinalproject-${env.BUILD_TAG}
                 """
             }
         }
@@ -28,11 +20,6 @@ pipeline {
                     env.cluster = eksctl get cluster --name udafinalproject --region us-east-1 | grep Error
                 }
                 echo ${env.cluster}
-                #sh """
-                #    export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/var/lib/jenkins/.local/bin:$PATH"
-                #    ansible-playbook ./.jenkins/ansible/main.yml -i /etc/ansible/hosts
-                #    ansible-playbook ./.jenkins/ansible/main-deploy-app.yml -i /etc/ansible/hosts
-                #"""
             }
         }
     }
