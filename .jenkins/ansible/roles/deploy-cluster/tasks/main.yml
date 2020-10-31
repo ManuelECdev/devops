@@ -1,7 +1,7 @@
 ---
 - name: "get cluster"
   shell: |
-    eksctl get cluster --name udafinalproject --region us-east-1 | grep Error
+    eksctl get cluster --name udafinalproject --region us-east-1
   register: cluster
   ignore_errors: True
 
