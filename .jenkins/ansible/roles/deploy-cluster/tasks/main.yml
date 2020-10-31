@@ -5,6 +5,10 @@
   register: cluster
   ignore_errors: True
 
+- debug:
+    var: cluster
+    verbosity: 0
+
 - name: "deploy eksctl cluster"
   shell: |
     eksctl create cluster --name udafinalproject --region us-east-1 --zones us-east-1a, us-east-1b, us-east-1c --nodes-min 1 --nodes-max 1 --ssh-access --ssh-public-key udacity
