@@ -1,14 +1,10 @@
 ---
 - name: "get cluster"
   shell: |
-    echo "test the local task"
-
-- name: "get cluster"
-  shell: |
-    eksctl get cluster --name udafinalproject --region us-east-1
+    eksctl get cluster --name udafinalproject --region us-east-1 | grep Error
   register: cluster
 
 - name: "deploy eksctl cluster"
   shell: |
-    eksctl create cluster --name udafinalproject --region us-east-1 --zones us-east-1a --nodes-min 1 --nodes-max 1 --ssh-access --ssh-public-key udacity
-  when: cluster.stdout is search("Error")
+    eksctl create cluster --name udafinalproject --region us-east-1 --zones us-east-1a, us-east-1b, us-east-1c --nodes-min 1 --nodes-max 1 --ssh-access --ssh-public-key udacity
+  when: cluster.stdout != ""
