@@ -19,7 +19,11 @@ pipeline {
                 script {
                     env.cluster = "hola"
                 }
-                sh 'eksctl get cluster --name udafinalproject --region us-east-1'
+                sh """
+                    export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/var/lib/jenkins/.local/bin:$PATH"
+                    echo ${PATH}
+                    eksctl get cluster --name udafinalproject --region us-east-1'
+                """
                 echo "${env.cluster}"
             }
         }
