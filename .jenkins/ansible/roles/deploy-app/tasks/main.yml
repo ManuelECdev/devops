@@ -4,6 +4,10 @@
     kubectl get pods --all-namespaces | grep udafinalproject | awk '{print $2}'
   register: oldPod
 
+- debug:
+    var: oldPod
+    verbosity: 0
+
 - name: "deploy app"
   shell: |
     echo "deploy new container build"

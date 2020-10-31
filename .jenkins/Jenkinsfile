@@ -27,7 +27,9 @@ pipeline {
                 sh """
                     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/var/lib/jenkins/.local/bin:$PATH"
                     ansible-playbook ./.jenkins/ansible/main.yml -i /etc/ansible/hosts
+                    kubectl get pods
                     ansible-playbook ./.jenkins/ansible/main-deploy-app.yml -i /etc/ansible/hosts
+                    kubctl get pods
                 """
             }
         }
