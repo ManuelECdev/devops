@@ -30,7 +30,7 @@ pipeline {
                     kubectl get pods
                     ansible-playbook ./.jenkins/ansible/main-deploy-app.yml -i /etc/ansible/hosts
                     kubectl get pods
-                    kubectl get service udafinalproject-lb 
+                    kubectl describe service udafinalproject-lb 
                 """
             }
         }
