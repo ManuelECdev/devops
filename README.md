@@ -12,6 +12,9 @@ This file is used for building a docker container for the app.
 Makefile:
 This file is used for automatize the execution of some functions like installing dependencies, running circleci locally, lint etc...
 
+build_docker.sh
+This is script is for building the app as a docker container locally.
+
 run_docker.sh
 This is script is for running the app as a docker container locally.
 
