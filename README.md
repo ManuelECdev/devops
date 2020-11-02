@@ -1,10 +1,10 @@
-Project summary
+## Project summary
 
 The project's scope is to operationalize a hello World application in Flask.
 
 In this project the app is given and the scope is to implement a Dockerfile, Makefile, build_docker.sh, run_docker.sh, upload_docker.sh, .jenkins/Jenkinsfile, the ansible files for deploying Amazon EKS cluster and a rolling deployment to the kubernetes cluster.
 
-Files
+## Files
 
 Dockerfile:
 This file is used for building a docker container for the app.
@@ -24,14 +24,14 @@ This file is for defining the required dependencies.
 .jenkins/Jenkinsfile
 This is file is used to give continuous integration capabilities to the app.
 
-Run the app locally as standalone.
+## Run the app locally as standalone.
 
 Software requirements: pylint, Python3 and curl.
 Create a virtualenv and activate it: python3 -m venv ~/udacityfinalapp & source ~/udacityfinalapp/bin/activate
 Install the necessary dependencies: make install
 Run the app: python3 app.py
 
-Running the app as docker container locally
+## Running the app as docker container locally
 
 Software requirements: Docker and curl.
 Run in Docker: ./run_docker.sh
