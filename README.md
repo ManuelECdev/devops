@@ -1,6 +1,6 @@
 ## Project summary
 
-The project's scope is to operationalize a hello World application in Flask and implement the  Dockerfile, Makefile, build_docker.sh, run_docker.sh, upload_docker.sh, .jenkins/Jenkinsfile, the ansible files for an app rolling deployment and  the Amazon EKS kubernetes cluster.
+The project's scope is to operationalize a hello World application in Flask and implement the  Dockerfile, Makefile, build_docker.sh, run_docker.sh, upload_docker.sh, Jenkinsfile, the ansible files for a rolling deployment and  the Amazon EKS kubernetes cluster.
 
 ## Files
 
